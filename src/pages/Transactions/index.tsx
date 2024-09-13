@@ -1,41 +1,44 @@
+import { useContext } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SearchForm";
-import { PriceHignLight, TransactionsContainer, TransactionsTable } from "./styles";
+import {
+  PriceHignLight,
+  TransactionsContainer,
+  TransactionsTable,
+} from "./styles";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
-export function Transactions(){
+
+export function Transactions() {
+ const { transactions } = useContext(TransactionsContext)
+ 
   return (
     <div>
-      <Header/>
-      <Summary/>
+      <Header />
+      <Summary />
 
-     <TransactionsContainer>
-        <SearchForm/>
+      <TransactionsContainer>
+        <SearchForm />
         <TransactionsTable>
-            <tbody>
-              <tr>
-                <td width="50%">Desenvolvimento de site</td>
-                <td>
-                  <PriceHignLight variant="income">
-                    12.00,00
-                  </PriceHignLight>
-                </td>
-                <td>Venda</td>
-                <td>22/04/2024</td>
-              </tr>
-              <tr>
-                <td width="50%">Hamburger</td>
-                <td>
-                  <PriceHignLight variant="outcome">
-                    -18.00,00
-                  </PriceHignLight>
-                </td>
-                <td>Venda</td>
-                <td>10/04/2024</td>
-              </tr>
-            </tbody>
-          </TransactionsTable>
-     </TransactionsContainer>
+          <tbody>
+            {transactions.map((transaction) => {
+              return (
+                <tr key={transaction.id}>
+                  <td width="50%">{transaction.description}</td>
+                  <td>
+                    <PriceHignLight variant={transaction.type}>
+                      {transaction.price}
+                    </PriceHignLight>
+                  </td>
+                  <td>{transaction.category}</td>
+                  <td>{transaction.createdAt}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </TransactionsTable>
+      </TransactionsContainer>
     </div>
-  )
+  );
 }
