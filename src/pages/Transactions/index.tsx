@@ -8,6 +8,7 @@ import {
   TransactionsTable,
 } from "./styles";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { dateFormatter, preciFormatter } from "../../Utils/formatter";
 
 
 export function Transactions() {
@@ -28,11 +29,12 @@ export function Transactions() {
                   <td width="50%">{transaction.description}</td>
                   <td>
                     <PriceHignLight variant={transaction.type}>
-                      {transaction.price}
+                      {transaction.type === 'outcome' && '- '}
+                      {preciFormatter.format(transaction.price)}
                     </PriceHignLight>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{transaction.createdAt}</td>
+                  <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
                 </tr>
               );
             })}
