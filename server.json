@@ -1,7 +1,7 @@
 {
   "transactrions": [
     {
-      "id": 1,
+      "id": "1",
       "description": "Desenvolvimento de site",
       "type": "income",
       "category": "venda",
@@ -9,7 +9,7 @@
       "createdAt": "2024-09-11T19:30:10.888Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "description": "Hamburger",
       "type": "outcome",
       "category": "Alimentação",
@@ -17,12 +17,124 @@
       "createdAt": "2024-09-11T19:28:10.888Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "description": "Pizza",
       "type": "outcome",
       "category": "Massas",
       "price": 50,
       "createdAt": "2024-09-11T19:29:10.888Z"
+    },
+    {
+      "id": "2601",
+      "description": "Desenvolvimento de App",
+      "price": 10000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2024-09-19T20:38:25.679Z"
+    },
+    {
+      "id": "396b",
+      "description": "Cachorro Quente",
+      "price": 15000,
+      "category": "Massas",
+      "type": "income",
+      "createdAt": "2024-09-19T20:42:11.682Z"
+    },
+    {
+      "id": "49c1",
+      "description": "Aplicação para Mobile",
+      "price": 12000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2024-09-19T20:47:09.187Z"
+    },
+    {
+      "id": "658d",
+      "description": "Front End",
+      "price": -50000,
+      "category": "Venda",
+      "type": "outcome",
+      "createdAt": "2024-09-19T20:50:27.325Z"
+    },
+    {
+      "id": "db72",
+      "description": "Restaurante",
+      "price": 100000,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2024-09-19T20:51:32.452Z"
+    },
+    {
+      "id": "157c",
+      "description": "Restaurante Pizza",
+      "price": 50000,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2024-09-19T20:53:00.361Z"
+    },
+    {
+      "description": "Pastel de carne",
+      "price": 10,
+      "category": "alimentação",
+      "type": "outcome",
+      "createdAt": "2024-09-21T20:06:12.984Z",
+      "id": "uD71uND"
+    },
+    {
+      "description": "alimentação",
+      "price": 5,
+      "category": "maçã",
+      "type": "outcome",
+      "createdAt": "2024-09-21T20:13:02.928Z",
+      "id": "k0nKFee"
+    },
+    {
+      "description": "Pão àrabe",
+      "price": 10,
+      "category": "Massas",
+      "type": "outcome",
+      "createdAt": "2024-09-21T20:26:20.387Z",
+      "id": "pKm40UF"
+    },
+    {
+      "description": "sorvete",
+      "price": 4,
+      "category": "doces",
+      "type": "outcome",
+      "createdAt": "2024-09-21T20:28:40.955Z",
+      "id": "yUzhxBQ"
+    },
+    {
+      "description": "fsdfsd",
+      "price": 5,
+      "category": "dsgf",
+      "type": "outcome",
+      "createdAt": "2024-09-21T20:28:52.686Z",
+      "id": "JWSdoU_"
+    },
+    {
+      "description": "bala",
+      "price": 2,
+      "category": "doce",
+      "type": "outcome",
+      "createdAt": "2024-09-21T20:34:58.403Z",
+      "id": "3ilcfWH"
+    },
+    {
+      "description": "Celular",
+      "price": 40000,
+      "category": "Eletrônicos",
+      "type": "outcome",
+      "createdAt": "2024-09-24T18:56:06.003Z",
+      "id": "u8konLv"
+    },
+    {
+      "description": "werwer",
+      "price": 55,
+      "category": "rewrwe",
+      "type": "income",
+      "createdAt": "2024-09-24T19:13:30.323Z",
+      "id": "x5NeNb8"
     }
   ]
 }

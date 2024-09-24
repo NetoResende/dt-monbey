@@ -10,6 +10,8 @@ import { ArrowCircleDown, ArrowCircleUp, X } from "phosphor-react";
 import { Controller, useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { useContextSelector } from "use-context-selector";
 
 const newTransactonFormSchema = z.object({
   description: z.string(),
@@ -18,10 +20,12 @@ const newTransactonFormSchema = z.object({
   type: z.enum(["income", "outcome"]),
 });
 
+
 type NewTransactionFormInput = z.infer<typeof newTransactonFormSchema>;
 
 export function NewTransactionsModal() {
   const {
+    reset,
     control,
     register,
     handleSubmit,
@@ -32,11 +36,21 @@ export function NewTransactionsModal() {
       type: 'income'
     }
   });
+  
+  const createTransactions = useContextSelector(TransactionsContext, (context)=>{
+    return context.createTransactions
+  })
 
   async function handlerSearchForm(data: NewTransactionFormInput) {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    console.log(data);
+    const { description, price, category, type } = data;
+     
+        await createTransactions({
+          description,
+          price,
+          category,
+          type
+        })
+      reset();
   }
 
   return (
@@ -88,10 +102,11 @@ export function NewTransactionsModal() {
               );
             }}
           />
-
-          <button type="submit" disabled={isSubmitting}>
-            Cadastrar
-          </button>
+            <Dialog.Close asChild>
+                  <button type="submit" disabled={isSubmitting} >
+                    Cadastrar
+                  </button>
+            </Dialog.Close>
         </form>
       </DaylogContent>
     </Dialog.Portal>
